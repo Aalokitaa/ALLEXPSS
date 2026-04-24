@@ -190,5 +190,4 @@ Use Postman to test the APIs.
 
 ## Author
 
-Aahan Srivastava
->>>>>>> 8b4ecf6 (success)
+Aalokita Chibb
