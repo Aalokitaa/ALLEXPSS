@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Testing/backend
+        working-directory: testing/backend
 
     steps:
       - name: Checkout code
@@ -40,7 +40,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Testing/frontend
+        working-directory: testing/frontend
 
     steps:
       - name: Checkout code
@@ -55,4 +55,4 @@ jobs:
         run: npm install
 
       - name: Run frontend tests
-        run: npm run test -- --run
+        run: npm run test
