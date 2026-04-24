@@ -1,0 +1,30 @@
+name: Continuous Deployment (CD)
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'experiment16/backend/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker Image
+        run: |
+          cd experiment16/backend
+          docker build -t testing-backend:latest .
+
+      - name: Run Docker Container (Dry Run for CI/CD test)
+        run: |
+          docker run -d -p 5000:5000 --name backend-service testing-backend:latest
+          sleep 5
+          curl http://localhost:5000/ | grep "success"
