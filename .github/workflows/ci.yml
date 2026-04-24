@@ -54,5 +54,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Fix permissions
+        run: chmod +x node_modules/.bin/vitest || true
+
       - name: Run frontend tests
         run: npm run test
