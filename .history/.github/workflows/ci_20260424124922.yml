@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Testing/backend
+        working-directory: Testing/Backend
 
     steps:
       - name: Checkout code
@@ -40,7 +40,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: Testing/frontend
+        working-directory: Testing/Frontend
 
     steps:
       - name: Checkout code
