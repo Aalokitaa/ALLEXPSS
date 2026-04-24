@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'experiment16/backend/**'
+      - 'experiment20/backend/**'
 
 jobs:
   build-and-deploy:
@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          cd experiment16/backend
+          cd experiment20/backend
           docker build -t testing-backend:latest .
 
       - name: Run Docker Container (Dry Run for CI/CD test)
